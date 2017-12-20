@@ -22,7 +22,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # Sample method, used to update a status
-#api.update_status('Teaching tweepy to CS660 (introduction to database systems) students at Boston University')
+api.update_status('Teaching tweepy to CS660 (introduction to database systems) students at Boston University')
 
 # Creates the user object. The me() method returns the user whose authentication keys were used.
 user = api.me()
