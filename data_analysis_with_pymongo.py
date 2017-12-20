@@ -28,7 +28,6 @@ print(tweets_iterator.count())
 data_related_tweets = collection.find({'text': {'$regex': '.*data.*', '$options' : 'i'}})
 #data_unrelated_tweets = collection.find({'text': {'$regex': '^((?!data).)*$', '$options': 'i'}})
 #print(data_unrelated_tweets.count())
-count = 0
 print(data_related_tweets.count())
 print(data_related_tweets[0]['user']['geo_enabled'])
 print(data_related_tweets[0]['created_at'])
@@ -42,13 +41,18 @@ print(data_related_tweets[10]['text'])
 print('***')
 print(clean_tweet(data_related_tweets[10]['text']))
 
-for tweet in data_related_tweets:
-    print(tweet_sentiment(tweet['text']), " sentiment for the tweet: ", tweet['text'])
-print(count)
+#for tweet in data_related_tweets:
+#    print(tweet_sentiment(tweet['text']), " sentiment for the tweet: ", tweet['text'])
 #print(data_related_tweets[0]['coordinates']['coordinates'][0])
-'''for tweet in data_related_tweets:
-    if tweet['geo_enabled'] != "true":
-        tweet_id = tweet['_id']
+
+count_geo = 0
+for tweet in data_related_tweets:
+    if tweet['user']['geo_enabled'] is True:
+        #or if tweet['user']['geo_enabled'] is True:
+
+        count_geo += 1
+
+        '''tweet_id = tweet['_id']
         try:
             del tweet['_id']
         except KeyError:
@@ -67,3 +71,5 @@ print(count)
     print('retweeted\'s screen name: ', tweet['retweeted_status']['user']['screen_name'])
   except KeyError:
       pass'''
+
+print(count_geo)
