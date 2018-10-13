@@ -2,11 +2,18 @@ from __future__ import print_function
 import tweepy
 import json
 from pymongo import MongoClient
+import os
 
+path = 'JSON_files'
+print(os.path.exists(path))
+if not os.path.exists(path):
+    os.mkdir(path, 0o777)
+path1 = 'google-drive://chaoswjz@bu.edu/1loKGesRIvMtQ5dj49VlSyL3VBeDozM_B'
 MONGO_HOST = 'mongodb://localhost/twitterdb'  # assuming you have mongoDB installed locally
 # and a database called 'twitterdb'
 
-WORDS = ['#bigdata', '#AI', '#datascience', '#machinelearning', '#ml', '#deeplearning']
+#WORDS = ['#bigdata', '#AI', '#datascience', '#machinelearning', '#ml', '#deeplearning']
+WORDS = ['gun', 'shooting', 'brady act', '2nd amendment']
 
 keys_file = open("keys.txt")
 lines = keys_file.readlines()
@@ -40,9 +47,23 @@ class StreamListener(tweepy.StreamListener):
 
             # grab the 'created_at' data from the Tweet to use for display
             created_at = datajson['created_at']
+            print("data is: ", data)
 
             # print out a message to the screen that we have collected a tweet
             print("Tweet collected at " + str(created_at))
+
+            '''
+            filename = str(ID) + '.json'
+            
+            
+            '''
+            print(datajson['id'])
+            print(str(datajson['id']) + '.json')
+            print(type(data))
+            print(type(datajson))
+
+            with open(path + '/' + str(datajson['id']) + '.json', 'w+') as fh:
+                json.dump(data, fh)
 
             # insert the data into the mongoDB into a collection called twitter_search
             # if twitter_search doesn't exist, it will be created.
@@ -55,6 +76,6 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 # Set up the listener. The 'wait_on_rate_limit=True' is needed to help with Twitter API rate limiting.
 listener = StreamListener(api=tweepy.API(wait_on_rate_limit=True))
-streamer = tweepy.Stream(auth=auth, listener=listener)
+streamer = tweepy.Stream(auth=auth, listener=listener, tweet_mode='extended')
 print("Tracking: " + str(WORDS))
-streamer.filter(track=WORDS)
+streamer.filter(languages=["en"], track=WORDS)

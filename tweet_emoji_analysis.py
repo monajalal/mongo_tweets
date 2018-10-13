@@ -8,7 +8,7 @@ from pymongo import MongoClient
 mongo_host= 'mongodb://localhost/twitterdb'
 
 #select the keywords interested to mine real-time tweets from
-search_keys = ['#deeplearning', '#computervision', '#datascience', '#bigdata']
+search_keys = ['gun', 'shooting', 'brady act', '2nd amendment']
 
 #read the keys.txt file and extract the consumer_key,
 #cosumer_secret, access_token and access_token_secret from it
