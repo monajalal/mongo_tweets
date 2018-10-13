@@ -7,6 +7,7 @@ tweets_iterator = collection.find()
 for tweet in tweets_iterator:
   try:
     print('tweet text: ',tweet['full_text'])
+    print("test")
    # print(tweet['url'])
   except KeyError:
    # print(tweet['url'])
