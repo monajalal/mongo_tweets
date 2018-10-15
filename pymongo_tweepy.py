@@ -3,8 +3,9 @@ import tweepy
 import json
 from pymongo import MongoClient
 import os
+import time
 
-path = 'JSON_files'
+path = '../JSON_files'
 print(os.path.exists(path))
 if not os.path.exists(path):
     os.mkdir(path, 0o777)
@@ -13,7 +14,7 @@ MONGO_HOST = 'mongodb://localhost/twitterdb'  # assuming you have mongoDB instal
 # and a database called 'twitterdb'
 
 #WORDS = ['#bigdata', '#AI', '#datascience', '#machinelearning', '#ml', '#deeplearning']
-WORDS = ['gun', 'shooting', 'brady act', '2nd amendment']
+WORDS = ['#midterm', '#2018midterms', '#election', '#november2018', '#vote2018']
 
 keys_file = open("keys.txt")
 lines = keys_file.readlines()
@@ -25,6 +26,11 @@ access_token_secret = lines[3].rstrip()
 class StreamListener(tweepy.StreamListener):
     # This is a class provided by tweepy to access the Twitter Streaming API.
 
+    def __init__(self, api):
+        self.num_of_tweets = 0
+        #self.start_time = time.time()
+        #self.time_limit = 15 * 60
+
     def on_connect(self):
         # Called initially to connect to the Streaming API
         print("You are now connected to the streaming API.")
@@ -34,8 +40,43 @@ class StreamListener(tweepy.StreamListener):
         print('An Error has occured: ' + repr(status_code))
         return False
 
+    '''
+    def on_status(self, status):
+        try:
+            client = MongoClient(MONGO_HOST)
+
+            # Use twitterdb database. If it doesn't exist, it will be created.
+            db = client.twitterdb
+
+            # Decode the JSON from Twitter
+            client = MongoClient(MONGO_HOST)
+            db = client.twitterdb
+            datajson = json.dumps(status._json)
+            jsondata = json.loads(datajson)
+            db.twitter_search.insert(jsondata)
+
+            # grab the 'created_at' data from the Tweet to use for display
+            created_at = status.created_at
+            print("data is: ", status.full_text)
+
+            # print out a message to the screen that we have collected a tweet
+            print("Tweet collected at " + str(created_at))
+            self.num_of_tweets += 1
+            print(self.num_of_tweets)
+            with open(path + '/' + str(datajson['id']) + '.json', 'w+') as fh:
+                json.dump(datajson, fh, indent=4)
+
+            # insert the data into the mongoDB into a collection called twitter_search
+            # if twitter_search doesn't exist, it will be created.
+            db.twitter_search.insert(datajson)
+        except Exception as e:
+            print(e)
+    '''
+
     def on_data(self, data):
         # This is the meat of the script...it connects to your mongoDB and stores the tweet
+        #if (time.time() - self.start_time) < self.time_limit:
+        #    print(time.time() - self.start_time)
         try:
             client = MongoClient(MONGO_HOST)
 
@@ -51,26 +92,18 @@ class StreamListener(tweepy.StreamListener):
 
             # print out a message to the screen that we have collected a tweet
             print("Tweet collected at " + str(created_at))
-
-            '''
-            filename = str(ID) + '.json'
-            
-            
-            '''
-            print(datajson['id'])
-            print(str(datajson['id']) + '.json')
-            print(type(data))
-            print(type(datajson))
-
+            self.num_of_tweets += 1
+            print(self.num_of_tweets)
             with open(path + '/' + str(datajson['id']) + '.json', 'w+') as fh:
-                json.dump(data, fh)
+                json.dump(datajson, fh, indent=4)
 
             # insert the data into the mongoDB into a collection called twitter_search
             # if twitter_search doesn't exist, it will be created.
             db.twitter_search.insert(datajson)
         except Exception as e:
             print(e)
-
+        #else:
+        #    exit()
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
