@@ -50,9 +50,12 @@ def searchTweets(api):
     week_ago = str(date.today() - DT.timedelta(days=7))
     while(True):
         try:
-            for tweet in tweepy.Cursor(api.search, q='#midterm OR #2018midterms OR #election OR #november2018 OR #vote2018 '
-                                                     '-filter:retweets',
-                                       since=week_ago, until=today, lang='en', tweet_mode='extended').items():
+            #for tweet in tweepy.Cursor(api.search, q='#midterm OR #2018midterms OR #election OR #november2018 OR #vote2018 '
+             #                                        '-filter:retweets',
+               #                        since=week_ago, until=today, lang='en', tweet_mode='extended').items():
+            for tweet in tweepy.Cursor(api.search,
+                                       q='#/vote/',
+                                    since=week_ago, until=today, lang='en', tweet_mode='extended').items():
                 #location = getLocation(tweet.user.location)
 
                 error_counter = 0
@@ -67,8 +70,8 @@ def searchTweets(api):
                 with open(json_path + '/{0}.json'.format(tweet.id), 'a+') as f:
                     json.dump(tweet._json, f, indent=4)
                 num_of_tweets += 1
-                #with open('../data_samples.txt', 'a+') as file:
-                #    file.write('tweet text:\n' + tweet.full_text + '\n\n')
+                with open('../data_samples.txt', 'a+') as file:
+                    file.write('tweet text:\n' + tweet.full_text + '\n\n')
                 print('get {0} tweet(s)'.format(num_of_tweets), '\n', tweet.full_text, '\n\n', 'created at',
                       tweet.created_at, '\t', tweet.user.location, '\n\n')
 
