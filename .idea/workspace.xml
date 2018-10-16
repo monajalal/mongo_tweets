@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92736c0d-fe0c-4846-94eb-6ecaa7539893" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/counthash_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/counthash_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/counthash_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/counthash_stream.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,30 +13,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/twitter_data_analysis$tweet_map.coverage" NAME="tweet_map Coverage Results" MODIFIED="1512274107418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$data_analysis_with_pymongo.coverage" NAME="data_analysis_with_pymongo Coverage Results" MODIFIED="1539445390480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/twitter_data_analysis$pymongo_tweepy.coverage" NAME="pymongo_tweepy Coverage Results" MODIFIED="1512256711429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$Nosetests_in_mongo_tweets.coverage" NAME="Nosetests in mongo_tweets Coverage Results" MODIFIED="1539450278360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mongo_tweets$pymongo_tweepy.coverage" NAME="pymongo_tweepy Coverage Results" MODIFIED="1539582565617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$MongoDB_test.coverage" NAME="MongoDB_test Coverage Results" MODIFIED="1539407038074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/twitter_data_analysis$test_tweepy.coverage" NAME="test_tweepy Coverage Results" MODIFIED="1512157228208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/twitter_data_analysis$tweepy_data_miner.coverage" NAME="tweepy_data_miner Coverage Results" MODIFIED="1512265835669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/twitter_data_analysis$plot_data.coverage" NAME="plot_data Coverage Results" MODIFIED="1512439237321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$tweet_map.coverage" NAME="tweet_map Coverage Results" MODIFIED="1539442591404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mongo_tweets$tweepy_data_miner.coverage" NAME="tweepy_data_miner Coverage Results" MODIFIED="1539442809289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$access_mongodb_database.coverage" NAME="access_mongodb_database Coverage Results" MODIFIED="1539459759941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mongo_tweets$usa_twitter_analysis.coverage" NAME="usa_twitter_analysis Coverage Results" MODIFIED="1539442611499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/twitter_data_analysis$data_analysis_with_pymongo.coverage" NAME="data_analysis_with_pymongo Coverage Results" MODIFIED="1512263340839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mongo_tweets$counthash_stream.coverage" NAME="counthash_stream Coverage Results" MODIFIED="1539667317731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mongo_tweets$counthash_search.coverage" NAME="counthash_search Coverage Results" MODIFIED="1539666942401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mongo_tweets$tweet_spider_JSON_streaming.coverage" NAME="tweet_spider_JSON_streaming Coverage Results" MODIFIED="1539648815279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/twitter_data_analysis$tweet_map.coverage" NAME="tweet_map Coverage Results" MODIFIED="1512274107418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/twitter_data_analysis$pymongo_tweepy.coverage" NAME="pymongo_tweepy Coverage Results" MODIFIED="1512256711429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mongo_tweets$pymongo_tweepy.coverage" NAME="pymongo_tweepy Coverage Results" MODIFIED="1539582565617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/twitter_data_analysis$tweepy_data_miner.coverage" NAME="tweepy_data_miner Coverage Results" MODIFIED="1512265835669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mongo_tweets$tweepy_data_miner.coverage" NAME="tweepy_data_miner Coverage Results" MODIFIED="1539442809289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/twitter_data_analysis$json_to_csv.coverage" NAME="json_to_csv Coverage Results" MODIFIED="1512272159902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/twitter_data_analysis$access_mongodb_database.coverage" NAME="access_mongodb_database Coverage Results" MODIFIED="1512157880739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$tweet_spider.coverage" NAME="tweet_spider Coverage Results" MODIFIED="1539639198996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mongo_tweets$usa_twitter_analysis.coverage" NAME="usa_twitter_analysis Coverage Results" MODIFIED="1539442611499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/twitter_data_analysis$MongoDB_test.coverage" NAME="MongoDB_test Coverage Results" MODIFIED="1512154300981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/twitter_data_analysis$usa_twitter_analysis.coverage" NAME="usa_twitter_analysis Coverage Results" MODIFIED="1512716947191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/twitter_data_analysis$data_analysis_with_pymongo.coverage" NAME="data_analysis_with_pymongo Coverage Results" MODIFIED="1512263340839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mongo_tweets$counthash_stream.coverage" NAME="counthash_stream Coverage Results" MODIFIED="1539662995062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/twitter_data_analysis$main_nnet.coverage" NAME="main_nnet Coverage Results" MODIFIED="1512439130089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$Nosetests_in_test_tweepy_py.coverage" NAME="Nosetests in test_tweepy.py Coverage Results" MODIFIED="1539407467682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mongo_tweets$tweet_emoji_analysis.coverage" NAME="tweet_emoji_analysis Coverage Results" MODIFIED="1539442452295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mongo_tweets$tweet_spider_JSON_streaming.coverage" NAME="tweet_spider_JSON_streaming Coverage Results" MODIFIED="1539648815279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -66,28 +69,28 @@
         <counts>
           <entry key="csv" value="3" />
           <entry key="html" value="2" />
-          <entry key="md" value="3" />
-          <entry key="py" value="18" />
+          <entry key="md" value="4" />
+          <entry key="py" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="Markdown" value="3" />
+          <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="18" />
+          <entry key="Python" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="249" />
-          <entry key="py" value="3924" />
+          <entry key="md" value="334" />
+          <entry key="py" value="4178" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="249" />
-          <entry key="Python" value="3923" />
+          <entry key="Markdown" value="334" />
+          <entry key="Python" value="4177" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
@@ -99,10 +102,36 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pymongo_tweepy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-125">
+              <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+                <marker date="1539582704821" expanded="true" signature="954:1065" ph="..." />
+                <marker date="1539582704821" expanded="true" signature="1440:2643" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tweet_spider_JSON_streaming.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="73" selection-end-column="53" />
+            <state relative-caret-position="813">
+              <caret line="71" column="110" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="110" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/counthash_stream.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4847">
+              <caret line="160" column="44" lean-forward="true" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -111,23 +140,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/counthash_stream.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="336">
-                <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+              <first_editor relative-caret-position="546">
+                <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -135,10 +152,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tweet_map.py">
+        <entry file="file://$PROJECT_DIR$/counthash_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+            <state relative-caret-position="-5586">
+              <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -244,11 +264,12 @@
         <option value="$PROJECT_DIR$/data_analysis_with_pymongo.py" />
         <option value="$PROJECT_DIR$/tweet_emoji_analysis.py" />
         <option value="$PROJECT_DIR$/access_mongodb_database.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/tweet_spider.py" />
         <option value="$PROJECT_DIR$/pymongo_tweepy.py" />
         <option value="$PROJECT_DIR$/tweet_spider_JSON_streaming.py" />
+        <option value="$PROJECT_DIR$/counthash_search.py" />
         <option value="$PROJECT_DIR$/counthash_stream.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -303,7 +324,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.counthash_stream">
-    <configuration name="access_mongodb_database" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="counthash_search" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="twitter_data_analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,7 +337,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/access_mongodb_database.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/counthash_search.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -414,19 +435,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.access_mongodb_database" />
       <item itemvalue="Python.pymongo_tweepy" />
       <item itemvalue="Python.tweet_spider" />
       <item itemvalue="Python.tweet_spider_JSON_streaming" />
       <item itemvalue="Python.counthash_stream" />
+      <item itemvalue="Python.counthash_search" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.counthash_stream" />
+        <item itemvalue="Python.counthash_search" />
         <item itemvalue="Python.tweet_spider_JSON_streaming" />
         <item itemvalue="Python.tweet_spider" />
         <item itemvalue="Python.pymongo_tweepy" />
-        <item itemvalue="Python.access_mongodb_database" />
       </list>
     </recent_temporary>
   </component>
@@ -471,7 +492,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19541183" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19541183" />
       <window_info id="Structure" order="2" weight="0.25293177" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32952854" />
@@ -479,7 +500,7 @@
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32903227" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" visible="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.31771675" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.31771675" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -554,18 +575,6 @@
     <entry file="file://$PROJECT_DIR$/map.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pymongo_tweepy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4032">
-          <caret line="101" column="25" selection-end-line="113" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <marker date="1539582704821" expanded="true" signature="954:1065" ph="..." />
-            <marker date="1539582704821" expanded="true" signature="1440:2643" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tweet_spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2100">
@@ -574,17 +583,6 @@
             <element signature="e#0#13#0" expanded="true" />
             <marker date="1539639198933" expanded="true" signature="734:735" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="336">
-            <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -639,16 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tweet_spider_JSON_streaming.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="73" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1247971763/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1608">
@@ -656,13 +644,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/counthash_stream.py">
+    <entry file="file://$PROJECT_DIR$/pymongo_tweepy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+        <state relative-caret-position="-125">
+          <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1539582704821" expanded="true" signature="954:1065" ph="..." />
+            <marker date="1539582704821" expanded="true" signature="1440:2643" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tweet_spider_JSON_streaming.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="71" column="110" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="110" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/counthash_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5586">
+          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/counthash_stream.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4847">
+          <caret line="160" column="44" lean-forward="true" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="546">
+            <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

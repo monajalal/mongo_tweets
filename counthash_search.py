@@ -8,6 +8,7 @@ from datetime import date
 #from geopy.exc import GeocoderTimedOut
 import time
 import collections
+import re
 
 json_path = '../JSON_files'
 
@@ -69,8 +70,9 @@ def searchTweets(api):
                 ex_num_hashtags = 0
                 #db.twitter_search.insert(jsondata)
 
-                with open(json_path + '/{0}.json'.format(tweet.id), 'a+') as f:
-                    json.dump(tweet._json, f, indent=4)
+
+                #with open(json_path + '/{0}.json'.format(tweet.id), 'a+') as f:
+                #    json.dump(tweet._json, f, indent=4)
 
 
                 if 'retweeted_status' in jsondata:
@@ -82,10 +84,19 @@ def searchTweets(api):
                                 print(str(jsondata['id']) + '\nin retweeted_status found hashtags: ', rt_num_hashtags)
                                 if rt_num_hashtags != 0:
                                     for i in range(rt_num_hashtags):
-                                        with open('../hashtags_search.txt', 'a+') as f:
-                                            f.write(
-                                                jsondata['retweeted_status']['extended_tweet']['entities']['hashtags'][
+                                        if re.match(r'.*(vote|midterm|november|election).*',
+                                                    jsondata['retweeted_status']['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'].lower() + '\n') is not None:
+                                            with open('../hashtags_search_match.txt', 'a+') as f:
+                                                f.write(
+                                                    jsondata['retweeted_status']['extended_tweet']['entities']['hashtags'][
                                                     i]['text'] + '\n')
+                                        else:
+                                            with open('../hashtags_search_not_match.txt', 'a+') as f:
+                                                f.write(
+                                                    jsondata['retweeted_status']['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'] + '\n')
+
                     elif 'entities' in jsondata['retweeted_status']:
                             if 'hashtags' in jsondata['retweeted_status']['entities']:
                                 rt_num_hashtags = len(
@@ -93,9 +104,17 @@ def searchTweets(api):
                                 print(str(jsondata['id']) + '\nin retweeted_status found hashtags: ', rt_num_hashtags)
                                 if rt_num_hashtags != 0:
                                     for i in range(rt_num_hashtags):
-                                        with open('../hashtags_search.txt', 'a+') as f:
-                                            f.write(
-                                                jsondata['retweeted_status']['entities']['hashtags'][
+                                        if re.match(r'.*(vote|midterm|november|election).*',
+                                                    jsondata['retweeted_status']['entities']['hashtags'][
+                                                        i]['text'].lower() + '\n') is not None:
+                                            with open('../hashtags_search_match.txt', 'a+') as f:
+                                                f.write(
+                                                    jsondata['retweeted_status']['entities']['hashtags'][
+                                                    i]['text'] + '\n')
+                                        else:
+                                            with open('../hashtags_search_not_match.txt', 'a+') as f:
+                                                f.write(
+                                                    jsondata['retweeted_status']['entities']['hashtags'][
                                                     i]['text'] + '\n')
 
                 if rt_num_hashtags == 0:
@@ -105,8 +124,18 @@ def searchTweets(api):
                             print(str(jsondata['id']) + '\nin entities found hashtags: ', en_num_hashtags)
                             if en_num_hashtags != 0:
                                 for i in range(en_num_hashtags):
-                                    with open('../hashtags_search.txt', 'a+') as f:
-                                        f.write(jsondata['entities']['hashtags'][i]['text'] + '\n')
+                                    if re.match(r'.*(vote|midterm|november|election).*',
+                                                jsondata['entities']['hashtags'][
+                                                    i]['text'].lower() + '\n') is not None:
+                                        with open('../hashtags_search_match.txt', 'a+') as f:
+                                            f.write(
+                                                jsondata['entities']['hashtags'][
+                                                    i]['text'] + '\n')
+                                    else:
+                                        with open('../hashtags_search_not_match.txt', 'a+') as f:
+                                            f.write(
+                                                jsondata['entities']['hashtags'][
+                                                    i]['text'] + '\n')
 
                 if rt_num_hashtags == 0 and en_num_hashtags == 0:
                     if 'extended_tweet' in jsondata:
@@ -116,27 +145,52 @@ def searchTweets(api):
                                 print(str(jsondata['id']) + '\nin extended_tweet found hashtags: ', ex_num_hashtags)
                                 if ex_num_hashtags != 0:
                                     for i in range(ex_num_hashtags):
-                                        with open('../hashtags_search.txt', 'a+') as f:
-                                            f.write(
-                                                datajson['extended_tweet']['entities']['hashtags'][i]['text'] + '\n')
+                                        if re.match(r'.*(vote|midterm|november|election).*',
+                                                    jsondata['extended_tweet']['entities']['hashtags'][
+                                                        i]['text'] + '\n') is not None:
+                                            with open('../hashtags_search_match.txt', 'a+') as f:
+                                                f.write(
+                                                    jsondata['extended_tweet']['entities']['hashtags'][
+                                                        i]['text'] + '\n')
+                                        else:
+                                            with open('../hashtags_search_not_match.txt', 'a+') as f:
+                                                f.write(
+                                                    jsondata['extended_tweet']['entities']['hashtags'][
+                                                        i]['text'] + '\n')
 
                 if rt_num_hashtags == 0 and en_num_hashtags == 0 and ex_num_hashtags == 0:
                     print('no hashtags')
 
-                if os.path.exists('../hashtags_search.txt'):
-                    with open('../hashtags_search.txt', 'r') as readfile:
+                if os.path.exists('../hashtags_search_match.txt'):
+                    with open('../hashtags_search_match.txt', 'r') as readfile:
                         res1 = readfile.read().split('\n')
 
-                    res = map(lambda x:x.lower(), res1)
+                    mres = map(lambda x:x.lower(), res1)
 
-                    writefile = open('../search_result.txt', 'w')
+                    writefile = open('../search_result_match.txt', 'w')
 
                     writefile.close()
 
-                    mycounter = collections.Counter(res)
+                    mycounter = collections.Counter(mres)
 
                     for k, v in mycounter.most_common():
-                        with open('../search_result.txt', 'a+') as outfile:
+                        with open('../search_result_match.txt', 'a+') as outfile:
+                            outfile.write('#{0:30}\t{1:7}'.format(k, v)+'\n')
+
+                if os.path.exists('../hashtags_search_not_match.txt'):
+                    with open('../hashtags_search_not_match.txt', 'r') as readfile:
+                        res2 = readfile.read().split('\n')
+
+                    nmres = map(lambda x:x.lower(), res2)
+
+                    writefile = open('../search_result_not_match.txt', 'w')
+
+                    writefile.close()
+
+                    mycounter = collections.Counter(nmres)
+
+                    for k, v in mycounter.most_common():
+                        with open('../search_result_not_match.txt', 'a+') as outfile:
                             outfile.write('#{0:30}\t{1:7}'.format(k, v)+'\n')
 
                 #save the json file

@@ -55,17 +55,28 @@ class StreamListener(tweepy.StreamListener):
             #with open(path + '/' + str(datajson['id']) + '.json', 'w+') as fh:
             #    json.dump(datajson, fh, indent=4)
 
-
             if 'retweeted_status' in datajson:
                 if 'extended_tweet' in datajson['retweeted_status']:
                     if 'entities' in datajson['retweeted_status']['extended_tweet']:
                         if 'hashtags' in datajson['retweeted_status']['extended_tweet']['entities']:
-                            rt_num_hashtags = len(datajson['retweeted_status']['extended_tweet']['entities']['hashtags'])
+                            rt_num_hashtags = len(
+                                datajson['retweeted_status']['extended_tweet']['entities']['hashtags'])
                             print(str(datajson['id']) + '\nin retweeted_status found hashtags: ', rt_num_hashtags)
                             if rt_num_hashtags != 0:
                                 for i in range(rt_num_hashtags):
-                                    with open('../hashtags_stream.txt', 'a+') as f:
-                                        f.write(datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][i]['text'] + '\n')
+                                    if re.match(r'.*(vote|midterm|november|election).*',
+                                                datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'].lower() + '\n') is not None:
+                                        with open('../hashtags_stream_match.txt', 'a+') as f:
+                                            f.write(
+                                                datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'] + '\n')
+                                    else:
+                                        with open('../hashtags_stream_not_match.txt', 'a+') as f:
+                                            f.write(
+                                                datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'] + '\n')
+
                 elif 'entities' in datajson['retweeted_status']:
                     if 'hashtags' in datajson['retweeted_status']['entities']:
                         rt_num_hashtags = len(
@@ -73,10 +84,18 @@ class StreamListener(tweepy.StreamListener):
                         print(str(datajson['id']) + '\nin retweeted_status found hashtags: ', rt_num_hashtags)
                         if rt_num_hashtags != 0:
                             for i in range(rt_num_hashtags):
-                                with open('../hashtags_stream.txt', 'a+') as f:
-                                    f.write(
-                                        datajson['retweeted_status']['entities']['hashtags'][
-                                            i]['text'] + '\n')
+                                if re.match(r'.*(vote|midterm|november|election).*',
+                                            datajson['retweeted_status']['entities']['hashtags'][
+                                                i]['text'].lower() + '\n') is not None:
+                                    with open('../hashtags_stream_match.txt', 'a+') as f:
+                                        f.write(
+                                            datajson['retweeted_status']['entities']['hashtags'][
+                                                i]['text'] + '\n')
+                                else:
+                                    with open('../hashtags_stream_not_match.txt', 'a+') as f:
+                                        f.write(
+                                            datajson['retweeted_status']['entities']['hashtags'][
+                                                i]['text'] + '\n')
 
             if rt_num_hashtags == 0:
                 if 'entities' in datajson:
@@ -85,38 +104,73 @@ class StreamListener(tweepy.StreamListener):
                         print(str(datajson['id']) + '\nin entities found hashtags: ', en_num_hashtags)
                         if en_num_hashtags != 0:
                             for i in range(en_num_hashtags):
-                                with open('../hashtags_stream.txt', 'a+') as f:
-                                    f.write(datajson['entities']['hashtags'][i]['text'] + '\n')
+                                if re.match(r'.*(vote|midterm|november|election).*',
+                                            datajson['entities']['hashtags'][
+                                                i]['text'].lower() + '\n') is not None:
+                                    with open('../hashtags_stream_match.txt', 'a+') as f:
+                                        f.write(
+                                            datajson['entities']['hashtags'][
+                                                i]['text'] + '\n')
+                                else:
+                                    with open('../hashtags_stream_not_match.txt', 'a+') as f:
+                                        f.write(
+                                            datajson['entities']['hashtags'][
+                                                i]['text'] + '\n')
 
             if rt_num_hashtags == 0 and en_num_hashtags == 0:
                 if 'extended_tweet' in datajson:
-                        if 'entities' in datajson['extended_tweet']:
-                            if 'hashtags' in datajson['extended_tweet']['entities']:
-                                ex_num_hashtags = len(datajson['extended_tweet']['entities']['hashtags'])
-                                print(str(datajson['id']) + '\nin extended_tweet found hashtags: ', ex_num_hashtags)
-                                if ex_num_hashtags != 0:
-                                    for i in range(ex_num_hashtags):
-                                        with open('../hashtags_stream.txt', 'a+') as f:
-                                            f.write(datajson['extended_tweet']['entities']['hashtags'][i]['text'] + '\n')
-
+                    if 'entities' in datajson['extended_tweet']:
+                        if 'hashtags' in datajson['extended_tweet']['entities']:
+                            ex_num_hashtags = len(datajson['extended_tweet']['entities']['hashtags'])
+                            print(str(datajson['id']) + '\nin extended_tweet found hashtags: ', ex_num_hashtags)
+                            if ex_num_hashtags != 0:
+                                for i in range(ex_num_hashtags):
+                                    if re.match(r'.*(vote|midterm|november|election).*',
+                                                datajson['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'] + '\n') is not None:
+                                        with open('../hashtags_stream_match.txt', 'a+') as f:
+                                            f.write(
+                                                datajson['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'] + '\n')
+                                    else:
+                                        with open('../hashtags_stream_not_match.txt', 'a+') as f:
+                                            f.write(
+                                                datajson['extended_tweet']['entities']['hashtags'][
+                                                    i]['text'] + '\n')
 
             if rt_num_hashtags == 0 and en_num_hashtags == 0 and ex_num_hashtags == 0:
                 print('no hashtags')
 
-            if os.path.exists('../hashtags_stream.txt'):
-                with open('hashtags_stream.txt', 'r') as readfile:
+            if os.path.exists('../hashtags_stream_match.txt'):
+                with open('../hashtags_stream_match.txt', 'r') as readfile:
                     res1 = readfile.read().split('\n')
 
-                res = map(lambda x: x.lower(), res1)
+                mres = map(lambda x: x.lower(), res1)
 
-                writefile = open('../stream_result.txt', 'w')
+                writefile = open('../stream_result_match.txt', 'w')
 
                 writefile.close()
 
-                mycounter = collections.Counter(res)
+                mycounter = collections.Counter(mres)
 
                 for k, v in mycounter.most_common():
-                    with open('../stream_result.txt', 'a+') as outfile:
+                    with open('../stream_result_match.txt', 'a+') as outfile:
+                        outfile.write('#{0:30}\t{1:7}'.format(k, v) + '\n')
+
+            if os.path.exists('../hashtags_stream_not_match.txt'):
+                with open('../hashtags_stream_not_match.txt', 'r') as readfile:
+                    res2 = readfile.read().split('\n')
+
+                nmres = map(lambda x: x.lower(), res2)
+
+                writefile = open('../stream_result_not_match.txt', 'w')
+
+                writefile.close()
+
+                mycounter = collections.Counter(nmres)
+
+                for k, v in mycounter.most_common():
+                    with open('../stream_result_not_match.txt', 'a+') as outfile:
                         outfile.write('#{0:30}\t{1:7}'.format(k, v) + '\n')
         except tweepy.TweepError as e:
             print(e.reason)
