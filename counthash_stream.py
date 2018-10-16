@@ -10,6 +10,16 @@ path = '../JSON_files'
 if not os.path.exists(path):
     os.mkdir(path, 0o777)
 
+unique_hashtags = []
+if os.path.exists('./unique_hashtags.txt'):
+    with open('./unique_hashtags.txt', 'r') as readfile:
+        res1 = readfile.read().split('\n')
+        for str1 in res1:
+            unique_hashtags.append(str1.strip())
+print(unique_hashtags)
+print(len(unique_hashtags))
+
+'''
 WORDS = ['#midterm', '#2018midterms', '#election', '#november2018',
                                                      '#vote2018', '#midterms', '#midterms2018', '#election2018',
                                                      '#2018election', '#november', '#vote', '#MidtermMlections2018',
@@ -19,6 +29,7 @@ WORDS = ['#midterm', '#2018midterms', '#election', '#november2018',
          '#bluenovember', '#voteredmidterm2018', '#voteredmidterms2018', '#voteRedToSaveAmerica2018', '#VoteTed', '#VoteGOP',
          '#VoteRed2018', '#VoteBlue2018', '#iwillvote', '#VotingRights', '#VoteRepublican', '#VoteNovember6th', '#ElectionDay',
          '#NovemberElection', '#voting', '#voters']
+'''
 #WORDS = [re.match(r'^#*vote*')]
 
 keys_file = open("keys.txt")
@@ -27,6 +38,10 @@ consumer_key = lines[0].rstrip()
 consumer_secret = lines[1].rstrip()
 access_token = lines[2].rstrip()
 access_token_secret = lines[3].rstrip()
+
+if os.path.exists('../hashtags_stream_match.txt'):
+    with open('../hashtags_stream_match.txt', 'r') as readfile:
+        res1 = readfile.read().split('\n')
 
 class StreamListener(tweepy.StreamListener):
     # This is a class provided by tweepy to access the Twitter Streaming API.
@@ -58,8 +73,8 @@ class StreamListener(tweepy.StreamListener):
             # Decode the JSON from Twitter
             datajson = json.loads(data)
 
-            #with open(path + '/' + str(datajson['id']) + '.json', 'w+') as fh:
-            #    json.dump(datajson, fh, indent=4)
+            with open(path + '/' + str(datajson['id']) + '.json', 'w+') as fh:
+                json.dump(datajson, fh, indent=4)
 
             if 'retweeted_status' in datajson:
                 if 'extended_tweet' in datajson['retweeted_status']:
@@ -183,10 +198,11 @@ class StreamListener(tweepy.StreamListener):
         #else:
         #    exit()
 
+
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 # Set up the listener. The 'wait_on_rate_limit=True' is needed to help with Twitter API rate limiting.
 listener = StreamListener(api=tweepy.API(wait_on_rate_limit=True))
 streamer = tweepy.Stream(auth=auth, listener=listener, tweet_mode='extended')
 #print("Tracking: " + str(WORDS))
-streamer.filter(languages=["en"], track=WORDS)
+streamer.filter(languages=["en"], track=unique_hashtags[:400])
