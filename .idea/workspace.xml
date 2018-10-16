@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92736c0d-fe0c-4846-94eb-6ecaa7539893" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/counthash_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/counthash_stream.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,13 +100,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="counthash_stream.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="counthash_stream.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/counthash_stream.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
+            <state relative-caret-position="119">
+              <caret line="75" column="50" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="50" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,6 +206,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/counthash_search.py" />
         <option value="$PROJECT_DIR$/counthash_stream.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -256,7 +268,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.counthash_stream">
+  <component name="RunManager" selected="Python.test">
     <configuration name="counthash_search" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="twitter_data_analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -295,7 +307,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="pymongo_tweepy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="twitter_data_analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -307,8 +319,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pymongo_tweepy.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -353,19 +364,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.pymongo_tweepy" />
       <item itemvalue="Python.tweet_spider" />
       <item itemvalue="Python.tweet_spider_JSON_streaming" />
       <item itemvalue="Python.counthash_stream" />
       <item itemvalue="Python.counthash_search" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.counthash_stream" />
         <item itemvalue="Python.counthash_search" />
         <item itemvalue="Python.tweet_spider_JSON_streaming" />
         <item itemvalue="Python.tweet_spider" />
-        <item itemvalue="Python.pymongo_tweepy" />
       </list>
     </recent_temporary>
   </component>
@@ -407,6 +418,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1018" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19936709" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -415,7 +427,7 @@
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32952854" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.32952854" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25293177" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32903227" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32875144" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.3990307" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="right" id="R Graphics" order="6" />
@@ -600,10 +612,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/counthash_stream.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="75" column="50" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="50" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
