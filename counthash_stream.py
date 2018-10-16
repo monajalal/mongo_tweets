@@ -161,7 +161,7 @@ class StreamListener(tweepy.StreamListener):
 
             if rt_num_hashtags == 0 and en_num_hashtags == 0 and ex_num_hashtags == 0:
                 print('no hashtags')
-
+            '''
             if os.path.exists('../hashtags_stream_match.txt'):
                 with open('../hashtags_stream_match.txt', 'r') as readfile:
                     res1 = readfile.read().split('\n')
@@ -193,6 +193,7 @@ class StreamListener(tweepy.StreamListener):
                 for k, v in mycounter.most_common():
                     with open('../stream_result_not_match.txt', 'a+') as outfile:
                         outfile.write('#{0:30}\t{1:7}'.format(k, v) + '\n')
+            '''
         except tweepy.TweepError as e:
             print(e.reason)
         #else:
