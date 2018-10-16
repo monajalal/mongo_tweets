@@ -21,6 +21,15 @@ WORDS = ['#midterm', '#2018midterms', '#election', '#november2018', '#vote2018']
 
 ERROR_LIMIT = 5
 
+query = '#midterm OR #2018midterms OR #election OR #november2018 OR #vote2018 OR #midterms OR #midterms2018'  \
+        'OR #election2018 OR #2018election OR #november OR #vote OR #MidtermMlections2018 OR #RockTheVote OR #GoVote'\
+            'OR #WhenWeAllVote OR #NovemberIsComing OR #VoteBlue OR #VoteThemOut OR #November6' \
+         '#VoteBlueToSaveAmerica OR #midterms OR #RegisterToVote OR #YourVoteCounts OR #PostcardsToVoters OR #WomenVoters'\
+         '#VoteBlueAndBringAFriend OR #VoteEarly OR #NativeVote OR #PAvotesBlue OR #GALationaVote OR #voteRed OR #rednovember'\
+         '#bluenovember OR #voteredmidterm2018 OR #voteredmidterms2018 OR #voteRedToSaveAmerica2018 OR #VoteTed OR #VoteGOP'\
+         '#VoteRed2018 OR #VoteBlue2018 OR #iwillvote OR #VotingRights OR #VoteRepublican OR #VoteNovember6th OR #ElectionDay'\
+         '#NovemberElection OR #voting OR #voters'
+
 '''
 def getLocation(address):
     geolocator = Nominatim(user_agent='tweet_spider')
@@ -52,9 +61,7 @@ def searchTweets(api):
     week_ago = str(date.today() - DT.timedelta(days=7))
     while(True):
         try:
-            for tweet in tweepy.Cursor(api.search, q='#midterm OR #2018midterms OR #election OR #november2018 OR '
-                                                     '#vote2018 OR #midterms OR #midterms2018 OR #election2018'
-                                                     '#2018election OR #november OR #vote',
+            for tweet in tweepy.Cursor(api.search, q=query,
                                        since=week_ago, until=today, lang='en', tweet_mode='extended').items():
 
                 #location = getLocation(tweet.user.location)

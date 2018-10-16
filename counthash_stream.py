@@ -12,7 +12,13 @@ if not os.path.exists(path):
 
 WORDS = ['#midterm', '#2018midterms', '#election', '#november2018',
                                                      '#vote2018', '#midterms', '#midterms2018', '#election2018',
-                                                     '#2018election', '#november', '#vote']
+                                                     '#2018election', '#november', '#vote', '#MidtermMlections2018',
+         '#RockTheVote', '#GoVote', '#WhenWeAllVote', '#NovemberIsComing', '#VoteBlue', '#VoteThemOut', '#November6'
+         '#VoteBlueToSaveAmerica', '#midterms', '#RegisterToVote', '#YourVoteCounts', '#PostcardsToVoters', '#WomenVoters',
+         '#VoteBlueAndBringAFriend', '#VoteEarly', '#NativeVote', '#PAvotesBlue', '#GALationaVote', '#voteRed', '#rednovember',
+         '#bluenovember', '#voteredmidterm2018', '#voteredmidterms2018', '#voteRedToSaveAmerica2018', '#VoteTed', '#VoteGOP',
+         '#VoteRed2018', '#VoteBlue2018', '#iwillvote', '#VotingRights', '#VoteRepublican', '#VoteNovember6th', '#ElectionDay',
+         '#NovemberElection', '#voting', '#voters']
 #WORDS = [re.match(r'^#*vote*')]
 
 keys_file = open("keys.txt")
