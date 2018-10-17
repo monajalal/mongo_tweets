@@ -39,7 +39,7 @@ WORDS = ['#midterm', '#2018midterms', '#election', '#november2018',
 '''
 #WORDS = [re.match(r'^#*vote*')]
 
-keys_file = open("keys.txt")
+keys_file = open("wenjun_key.txt")
 lines = keys_file.readlines()
 consumer_key = lines[0].rstrip()
 consumer_secret = lines[1].rstrip()
@@ -237,4 +237,4 @@ auth.set_access_token(access_token, access_token_secret)
 listener = StreamListener(api=tweepy.API(wait_on_rate_limit=True))
 streamer = tweepy.Stream(auth=auth, listener=listener, tweet_mode='extended')
 #print("Tracking: " + str(WORDS))
-streamer.filter(languages=["en"], track=unique_hashtags[:400])
+streamer.filter(languages=["en"], track=unique_hashtags[735:])
