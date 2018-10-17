@@ -97,7 +97,7 @@ class StreamListener(tweepy.StreamListener):
                                             csv_writer =csv.writer(f, delimiter = ',')
                                             csv_writer.writerow([
                                                 datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
-                                                    i]['text']])
+                                                    i]['text'].encode('utf-8')])
                                     else:
                                         with open('../hashtags_stream_not_match.csv', 'a+') as f:
                                             csv_writer = csv.writer(f, delimiter=',')
@@ -220,6 +220,8 @@ class StreamListener(tweepy.StreamListener):
 
         except urllib3.exceptions.ProtocolError as e:
             print("url exception is:", e)
+            pass
+        except UnicodeDecodeError as e:
             pass
         #else:
         #    exit()
