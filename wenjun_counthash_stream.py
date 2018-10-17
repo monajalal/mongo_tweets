@@ -7,7 +7,11 @@ import time
 import re
 import csv
 from shutil import move
-import urllib3
+#import urllib3
+
+from urllib3.exceptions import ProtocolError
+import http
+
 
 path = '../JSON_files'
 if not os.path.exists(path):
@@ -217,14 +221,20 @@ class StreamListener(tweepy.StreamListener):
 
         except tweepy.TweepError as e:
             print("Tweepy Error is: ", e.reason)
+            pass
+        except http.client.IncompleteRead as e:
+            print("http exception is: ", e)
+            pass
 
         except UnicodeEncodeError as e:
             print("Unicode error is: ", e)
             pass
-
-        except urllib3.exceptions.ProtocolError as e:
+        except ProtocolError as e:
             print("url exception is:", e)
+            time.sleep(15*60)
             pass
+
+
         except UnicodeDecodeError as e:
             pass
         #else:
