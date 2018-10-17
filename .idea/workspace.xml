@@ -103,8 +103,8 @@
       <file leaf-file-name="counthash_stream.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/counthash_stream.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
+            <state relative-caret-position="78">
+              <caret line="167" column="33" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -168,15 +168,16 @@
       <find>UNI</find>
       <find>ext</find>
       <find>pprint</find>
-      <find />
+      <find>Democrats moan and groan</find>
       <find>1051318331427323905</find>
       <find>print_function</find>
       <find>print</find>
-      <find />
+      <find>no has</find>
       <find>write</find>
       <find>wr</find>
       <find>txt</find>
       <find>writerow</find>
+      <find>csv_writer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -418,6 +419,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1018" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19936709" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -772,8 +774,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/counthash_stream.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
+        <state relative-caret-position="78">
+          <caret line="167" column="33" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>

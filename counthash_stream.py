@@ -94,14 +94,14 @@ class StreamListener(tweepy.StreamListener):
                                                 datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
                                                     i]['text'].lower()) is not None:
                                         with open('../hashtags_stream_match.csv', 'a+') as f:
-                                            csv_writer =csv.writer(f, delimiter = ',')
-                                            csv_writer.writerow([
+                                            csv_writer1 =csv.writer(f, delimiter = ',')
+                                            csv_writer1.writerow([
                                                 datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
                                                     i]['text'].encode('utf-8')])
                                     else:
                                         with open('../hashtags_stream_not_match.csv', 'a+') as f:
-                                            csv_writer = csv.writer(f, delimiter=',')
-                                            csv_writer.writerow([
+                                            csv_writer2 = csv.writer(f, delimiter=',')
+                                            csv_writer2.writerow([
                                             datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
                                                 i]['text'].encode('utf-8')])
 
@@ -116,14 +116,14 @@ class StreamListener(tweepy.StreamListener):
                                             datajson['retweeted_status']['entities']['hashtags'][
                                                 i]['text'].lower()) is not None:
                                     with open('../hashtags_stream_match.csv', 'a+') as f:
-                                        csv_writer = csv.writer(f, delimiter = ',')
-                                        csv_writer.writerow([
+                                        csv_writer1 = csv.writer(f, delimiter = ',')
+                                        csv_writer1.writerow([
                                         datajson['retweeted_status']['entities']['hashtags'][
                                             i]['text'].encode('utf-8')])
                                 else:
                                     with open('../hashtags_stream_not_match.csv', 'a+') as f:
-                                        csv_writer = csv.writer(f, delimiter = ',')
-                                        csv_writer.writerow([
+                                        csv_writer2 = csv.writer(f, delimiter = ',')
+                                        csv_writer2.writerow([
                                         datajson['retweeted_status']['entities']['hashtags'][
                                             i]['text'].encode('utf-8')])
 
@@ -138,14 +138,14 @@ class StreamListener(tweepy.StreamListener):
                                             datajson['entities']['hashtags'][
                                                 i]['text'].lower()) is not None:
                                     with open('../hashtags_stream_match.csv', 'a+') as f:
-                                        csv_writer = csv.writer(f, delimiter=',')
-                                        csv_writer.writerow([
+                                        csv_writer1 = csv.writer(f, delimiter=',')
+                                        csv_writer1.writerow([
                                             datajson['entities']['hashtags'][
                                                 i]['text'].encode('utf-8')])
                                 else:
                                     with open('../hashtags_stream_not_match.csv', 'a+') as f:
-                                        csv_writer = csv.writer(f, delimiter=',')
-                                        csv_writer.writerow([
+                                        csv_writer2 = csv.writer(f, delimiter=',')
+                                        csv_writer2.writerow([
                                             datajson['entities']['hashtags'][
                                                 i]['text'].encode('utf-8')])
 
@@ -161,14 +161,14 @@ class StreamListener(tweepy.StreamListener):
                                                 datajson['extended_tweet']['entities']['hashtags'][
                                                     i]['text']) is not None:
                                         with open('../hashtags_stream_match.csv', 'a+') as f:
-                                            csv_writer = csv.writer(f, delimiter = ',')
-                                            csv_writer.writerow([
+                                            csv_writer1 = csv.writer(f, delimiter = ',')
+                                            csv_writer1.writerow([
                                                 datajson['extended_tweet']['entities']['hashtags'][
                                                     i]['text'].encode('utf-8')])
                                     else:
                                         with open('../hashtags_stream_not_match.csv', 'a+') as f:
-                                            csv_writer = csv.writer(f, delimiter = ',')
-                                            csv_writer.writerow([
+                                            csv_writer2 = csv.writer(f, delimiter = ',')
+                                            csv_writer2.writerow([
                                                 datajson['extended_tweet']['entities']['hashtags'][
                                                     i]['text'].encode('utf-8')])
 
@@ -189,8 +189,8 @@ class StreamListener(tweepy.StreamListener):
 
                 for k, v in mycounter.most_common():
                     with open('../stream_result_matchtmp.csv', 'a+') as outfile:
-                        csvWriter = csv.writer(outfile, delimiter = ',')
-                        csvWriter.writerow([k.encode('utf-8'),v])
+                        csvWriter1 = csv.writer(outfile, delimiter = ',')
+                        csvWriter1.writerow([k.encode('utf-8'),v])
                 move('../stream_result_matchtmp.csv', '../stream_result_match.csv')
 
             if os.path.exists('../hashtags_stream_not_match.csv'):
@@ -207,8 +207,8 @@ class StreamListener(tweepy.StreamListener):
 
                 for k, v in mycounter.most_common():
                     with open('../stream_result_not_matchtmp.csv', 'a+') as outfile:
-                        csvWriter = csv.writer(outfile, delimiter = ',')
-                        csvWriter.writerow([k.encode('utf-8'),v])
+                        csvWriter2 = csv.writer(outfile, delimiter = ',')
+                        csvWriter2.writerow([k.encode('utf-8'),v])
                 move('../stream_result_not_matchtmp.csv', '../stream_result_not_match.csv')
 
         except tweepy.TweepError as e:
