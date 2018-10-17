@@ -96,7 +96,7 @@ class StreamListener(tweepy.StreamListener):
                                         with open('../hashtags_stream_not_match.txt', 'a+') as f:
                                             f.write(
                                                 datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
-                                                    i]['text'] + '\n')
+                                                    i]['text'].encode('utf-8') + '\n')
 
                 elif 'entities' in datajson['retweeted_status']:
                     if 'hashtags' in datajson['retweeted_status']['entities']:
@@ -111,12 +111,12 @@ class StreamListener(tweepy.StreamListener):
                                     with open('../hashtags_stream_match.txt', 'a+') as f:
                                         f.write(
                                             datajson['retweeted_status']['entities']['hashtags'][
-                                                i]['text'] + '\n')
+                                                i]['text'].encode('utf-8') + '\n')
                                 else:
                                     with open('../hashtags_stream_not_match.txt', 'a+') as f:
                                         f.write(
                                             datajson['retweeted_status']['entities']['hashtags'][
-                                                i]['text'] + '\n')
+                                                i]['text'].encode('utf-8') + '\n')
 
             if rt_num_hashtags == 0:
                 if 'entities' in datajson:
@@ -131,12 +131,12 @@ class StreamListener(tweepy.StreamListener):
                                     with open('../hashtags_stream_match.txt', 'a+') as f:
                                         f.write(
                                             datajson['entities']['hashtags'][
-                                                i]['text'] + '\n')
+                                                i]['text'].encode('utf-8') + '\n')
                                 else:
                                     with open('../hashtags_stream_not_match.txt', 'a+') as f:
                                         f.write(
                                             datajson['entities']['hashtags'][
-                                                i]['text'] + '\n')
+                                                i]['text'].encode('utf-8') + '\n')
 
             if rt_num_hashtags == 0 and en_num_hashtags == 0:
                 if 'extended_tweet' in datajson:
@@ -157,7 +157,7 @@ class StreamListener(tweepy.StreamListener):
                                         with open('../hashtags_stream_not_match.txt', 'a+') as f:
                                             f.write(
                                                 datajson['extended_tweet']['entities']['hashtags'][
-                                                    i]['text'] + '\n')
+                                                    i]['text'].encode('utf-8') + '\n')
 
             if rt_num_hashtags == 0 and en_num_hashtags == 0 and ex_num_hashtags == 0:
                 print('no hashtags')
@@ -195,7 +195,11 @@ class StreamListener(tweepy.StreamListener):
                         outfile.write('#{0:30}\t{1:7}'.format(k, v) + '\n')
             '''
         except tweepy.TweepError as e:
-            print(e.reason)
+            print("Tweepy Error is: ", e.reason)
+
+        except UnicodeEncodeError as e:
+            print("Unicode error is: ", e.reason)
+            pass
         #else:
         #    exit()
 
