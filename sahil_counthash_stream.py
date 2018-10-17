@@ -97,13 +97,13 @@ class StreamListener(tweepy.StreamListener):
                                     if re.match(r'.*(vote|midterm|november|election).*',
                                                 datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
                                                     i]['text'].lower()) is not None:
-                                        with open('../hashtags_stream_match.csv', 'a+') as f:
+                                        with open('../sahil_hashtags_stream_match.csv', 'a+') as f:
                                             csv_writer1 =csv.writer(f, delimiter = ',')
                                             csv_writer1.writerow([
                                                 datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
                                                     i]['text'].encode('utf-8')])
                                     else:
-                                        with open('../hashtags_stream_not_match.csv', 'a+') as f:
+                                        with open('../sahil_hashtags_stream_not_match.csv', 'a+') as f:
                                             csv_writer2 = csv.writer(f, delimiter=',')
                                             csv_writer2.writerow([
                                             datajson['retweeted_status']['extended_tweet']['entities']['hashtags'][
@@ -119,13 +119,13 @@ class StreamListener(tweepy.StreamListener):
                                 if re.match(r'.*(vote|midterm|november|election).*',
                                             datajson['retweeted_status']['entities']['hashtags'][
                                                 i]['text'].lower()) is not None:
-                                    with open('../hashtags_stream_match.csv', 'a+') as f:
+                                    with open('../sahil_hashtags_stream_match.csv', 'a+') as f:
                                         csv_writer1 = csv.writer(f, delimiter = ',')
                                         csv_writer1.writerow([
                                         datajson['retweeted_status']['entities']['hashtags'][
                                             i]['text'].encode('utf-8')])
                                 else:
-                                    with open('../hashtags_stream_not_match.csv', 'a+') as f:
+                                    with open('../sahil_hashtags_stream_not_match.csv', 'a+') as f:
                                         csv_writer2 = csv.writer(f, delimiter = ',')
                                         csv_writer2.writerow([
                                         datajson['retweeted_status']['entities']['hashtags'][
@@ -141,13 +141,13 @@ class StreamListener(tweepy.StreamListener):
                                 if re.match(r'.*(vote|midterm|november|election).*',
                                             datajson['entities']['hashtags'][
                                                 i]['text'].lower()) is not None:
-                                    with open('../hashtags_stream_match.csv', 'a+') as f:
+                                    with open('../sahil_hashtags_stream_match.csv', 'a+') as f:
                                         csv_writer1 = csv.writer(f, delimiter=',')
                                         csv_writer1.writerow([
                                             datajson['entities']['hashtags'][
                                                 i]['text'].encode('utf-8')])
                                 else:
-                                    with open('../hashtags_stream_not_match.csv', 'a+') as f:
+                                    with open('../sahil_hashtags_stream_not_match.csv', 'a+') as f:
                                         csv_writer2 = csv.writer(f, delimiter=',')
                                         csv_writer2.writerow([
                                             datajson['entities']['hashtags'][
@@ -164,13 +164,13 @@ class StreamListener(tweepy.StreamListener):
                                     if re.match(r'.*(vote|midterm|november|election).*',
                                                 datajson['extended_tweet']['entities']['hashtags'][
                                                     i]['text']) is not None:
-                                        with open('../hashtags_stream_match.csv', 'a+') as f:
+                                        with open('../sahil_hashtags_stream_match.csv', 'a+') as f:
                                             csv_writer1 = csv.writer(f, delimiter = ',')
                                             csv_writer1.writerow([
                                                 datajson['extended_tweet']['entities']['hashtags'][
                                                     i]['text'].encode('utf-8')])
                                     else:
-                                        with open('../hashtags_stream_not_match.csv', 'a+') as f:
+                                        with open('../sahil_hashtags_stream_not_match.csv', 'a+') as f:
                                             csv_writer2 = csv.writer(f, delimiter = ',')
                                             csv_writer2.writerow([
                                                 datajson['extended_tweet']['entities']['hashtags'][
@@ -179,8 +179,8 @@ class StreamListener(tweepy.StreamListener):
             if rt_num_hashtags == 0 and en_num_hashtags == 0 and ex_num_hashtags == 0:
                 print('no hashtags')
 
-            if os.path.exists('../hashtags_stream_match.csv'):
-                with open('../hashtags_stream_match.csv', 'r') as readfile:
+            if os.path.exists('../sahil_hashtags_stream_match.csv'):
+                with open('../sahil_hashtags_stream_match.csv', 'r') as readfile:
                     res1 = readfile.read().split('\n')
 
                 mres = map(lambda x: x.lower(), res1)
@@ -192,13 +192,13 @@ class StreamListener(tweepy.StreamListener):
                 mycounter = collections.Counter(mres)
 
                 for k, v in mycounter.most_common():
-                    with open('../stream_result_matchtmp.csv', 'a+') as outfile:
+                    with open('../sahil_stream_result_matchtmp.csv', 'a+') as outfile:
                         csvWriter1 = csv.writer(outfile, delimiter = ',')
                         csvWriter1.writerow([k.encode('utf-8'),v])
-                move('../stream_result_matchtmp.csv', '../stream_result_match.csv')
+                move('../sahil_stream_result_matchtmp.csv', '../sahil_stream_result_match.csv')
 
-            if os.path.exists('../hashtags_stream_not_match.csv'):
-                with open('../hashtags_stream_not_match.csv', 'r') as readfile:
+            if os.path.exists('../sahil_hashtags_stream_not_match.csv'):
+                with open('../sahil_hashtags_stream_not_match.csv', 'r') as readfile:
                     res2 = readfile.read().split('\n')
 
                 nmres = map(lambda x: x.lower(), res2)
@@ -210,10 +210,10 @@ class StreamListener(tweepy.StreamListener):
                 mycounter = collections.Counter(nmres)
 
                 for k, v in mycounter.most_common():
-                    with open('../stream_result_not_matchtmp.csv', 'a+') as outfile:
+                    with open('../sahil_stream_result_not_matchtmp.csv', 'a+') as outfile:
                         csvWriter2 = csv.writer(outfile, delimiter = ',')
                         csvWriter2.writerow([k.encode('utf-8'),v])
-                move('../stream_result_not_matchtmp.csv', '../stream_result_not_match.csv')
+                move('../sahil_stream_result_not_matchtmp.csv', '../sahil_stream_result_not_match.csv')
 
         except tweepy.TweepError as e:
             print("Tweepy Error is: ", e.reason)
